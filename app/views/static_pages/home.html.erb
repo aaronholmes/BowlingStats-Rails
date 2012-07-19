@@ -1,3 +1,13 @@
 <% provide(:title, 'Welcome') %>
-<h1>Welcome</h1>
-<p>Bowling stats is a web application for tracking bowling scores</p>
+
+<div class="center hero-unit">
+  <h1>Welcome to Bowling Stats</h1>
+
+  <h2>
+    Bowling stats is a web application for tracking bowling scores
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
