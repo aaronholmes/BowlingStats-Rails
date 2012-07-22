@@ -2,13 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'bootstrap-sass'
+gem 'yui-rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-group :development do
+group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.10.0'
+  gem "pry"
 end
 
 group :test do
@@ -17,6 +16,10 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
+end
+
+group :development do
+  gem 'annotate', '~> 2.4.1.beta'
 end
 
 # Gems used only for assets and not required
@@ -30,8 +33,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'yui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
