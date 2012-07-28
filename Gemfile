@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'bootstrap-sass'
 gem 'yui-rails'
+gem 'rake'
 
 group :development, :test do
   gem 'sqlite3'
