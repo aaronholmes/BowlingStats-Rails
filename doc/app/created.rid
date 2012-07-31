@@ -1,0 +1,11 @@
+Tue, 31 Jul 2012 12:14:25 -0400
+doc/README_FOR_APP	Tue, 17 Jul 2012 20:31:17 -0400
+app/controllers/application_controller.rb	Wed, 25 Jul 2012 13:59:11 -0400
+app/controllers/sessions_controller.rb	Wed, 25 Jul 2012 13:57:55 -0400
+app/controllers/static_pages_controller.rb	Wed, 18 Jul 2012 21:38:34 -0400
+app/controllers/users_controller.rb	Tue, 24 Jul 2012 21:58:42 -0400
+app/helpers/application_helper.rb	Wed, 18 Jul 2012 21:16:47 -0400
+app/helpers/sessions_helper.rb	Wed, 25 Jul 2012 13:39:43 -0400
+app/helpers/static_pages_helper.rb	Tue, 17 Jul 2012 23:40:13 -0400
+app/helpers/users_helper.rb	Tue, 24 Jul 2012 21:07:55 -0400
+app/models/user.rb	Wed, 25 Jul 2012 14:06:11 -0400
