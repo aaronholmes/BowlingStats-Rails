@@ -163,6 +163,7 @@ DEPENDENCIES
   pg (= 0.12.2)
   pry
   rails (= 3.2.6)
+  rake
   rspec-rails (= 2.10.0)
   sass-rails (~> 3.2.3)
   sqlite3
