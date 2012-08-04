@@ -3,7 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'bootstrap-sass'
 gem 'yui-rails'
+#TODO: Try to remove jquery dependency for bootstrap
+gem 'jquery-rails'
 gem 'rake'
+gem 'bcrypt-ruby', '~> 3.0.1'
 
 group :development, :test do
   gem 'sqlite3'
@@ -36,16 +39,3 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-# To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.1'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
