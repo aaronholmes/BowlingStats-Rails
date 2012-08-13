@@ -1,0 +1,12 @@
+defaults: &defaults
+  app_offline: false
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  app_offline: true
