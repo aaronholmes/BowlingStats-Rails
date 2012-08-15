@@ -144,37 +144,153 @@ input, textarea, select, .uneditable-input {
 
 /* Landing Page */
 
-#optin {
-  width:200px;
-  background: #232323 url(/assets/gloss.png) no-repeat bottom center;
-  border-bottom: 3px solid #232323;
-  color: #fff;
-  padding: 20px 15px;
-  text-shadow: 1px 1px #111;
-}
+
   #optin input {
-    border: 1px solid #111;
-    font-size: 15px;
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    box-shadow: 0 2px 2px #111;
-    -moz-box-shadow: 0 2px 2px #111;
-    -webkit-box-shadow: 0 2px 2px #111
+
   }
     #optin input.email { background: #fff url(/assets/email.png) no-repeat 10px center; padding-left: 35px }
     #optin input.name { background: #fff url(/assets/name.png) no-repeat 10px center; padding-left: 35px }
-    #optin input[type="submit"] {
-      background: #960e17 url(images/red.png) repeat-x top;
-      border: 1px solid #111;
-      color: #fff;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-      padding: 8px 0;
-      text-shadow: -1px -1px #3a060a;
-      width: 100%
+
+img.bg {
+      /* Set rules to fill background */
+      min-height: 100%;
+      min-width: 1024px;
+      
+      /* Set up proportionate scaling */
+      width: 100%;
+      height: auto;
+      
+      /* Set up positioning */
+      position: fixed;
+      top: 0;
+      left: 0;
     }
-      #optin input[type="submit"]:hover { color: #ffa5a5 }
+    
+    @media screen and (max-width: 1024px){
+      img.bg {
+        left: 50%;
+        margin-left: -512px; }
+    }
+#page-wrap{
+  position:absolute;
+  left:50%;
+  width:838px;
+}
+#page-wrap{
+  top:50%;
+  height:328px;
+  width:838px;
+  margin:-154px 0 0 -418px;
+}
+
+#optin{
+  position:absolute;
+  top:0;
+  left:436px;
+  width:400px;
+  height:108px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  padding:20px;
+}
+
+#teaser {
+  position:absolute;
+  top:0;
+  left:0px;
+  width:405px;
+  color: #FFF;
+  margin-top: 5px;
+}
+
+#teaser h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 3px;
+  letter-spacing: 1px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  
+  color: #FFF;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;text-shadow: black 0 1px 2px;
+}
+
+.soon {
+  display:block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+#optin{
+  background:#fff;
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#d0d0d0));
+  background:-webkit-linear-gradient(top,#fff 0,#d0d0d0 100%);background:-moz-linear-gradient(top,#fff 0,#d0d0d0 100%);
+  background:-ms-linear-gradient(top,#fff 0,#d0d0d0 100%);
+  background:-o-linear-gradient(top,#fff 0,#d0d0d0 100%);
+  background:linear-gradient(top,#fff 0,#d0d0d0 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
+  border-left:solid 1px #ccc;
+  border-right:solid 1px #ccc;
+  border-bottom:solid 1px #ccc;
+  -webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);
+  -moz-box-shadow:0 1px 0 rgba(0,0,0,.1);
+  box-shadow:0 1px 0 rgba(0,0,0,.1);
+}
+
+#optin h2{
+  position:relative;
+  display:block;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-top:14px;
+  margin-bottom:14px;
+  font-size:18px;
+  font-weight:300;
+  color:#777;
+  border-bottom:1px solid #E2E2E2;
+  -webkit-box-shadow:0 1px 0 #fff;
+  -moz-box-shadow:0 1px 0 #fff;
+  box-shadow:0 1px 0 #fff;
+  -webkit-text-shadow:0 1px 0 rgba(255,255,255,.6);
+  -moz-text-shadow:0 1px 0 rgba(255,255,255,.6);
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+}
+
+#optin h2 strong{
+  font-weight:500;
+  color:#333;
+}
+
+#optin input.email{width:266px;}
+
+.primary{
+  color:#fff;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25)
+}
+  .primary:hover{
+    text-decoration:none;
+    color:#fff
+  }
+  a.primary:link,a.primary:visited{
+    color:#fff
+  }
+  a.primary:hover, a.primary:focus{
+    color:#fff
+  }
+  a.primary:active{
+    color:#fff
+  }
+  .primary{
+    background-color:rgba(23,110,169,0.55)
+  }
+  .primary:hover,.primary:focus{
+    background-color:#0378a9
+  }
+  .primary:active{
+    background-color:#036690
+  }
