@@ -12,10 +12,10 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/home/deployer/apps/BowlingStats-Rails/current
-PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
-AS_USER=deployer
+APP_ROOT=<%= current_path %>
+PID=<%= unicorn_pid %>
+CMD="cd <%= current_path %>; bundle exec unicorn -D -c <%= unicorn_config %> -E production"
+AS_USER=<%= unicorn_user %>
 set -u
 
 OLD_PIN="$PID.oldbin"
@@ -50,7 +50,7 @@ force-stop)
   echo >&2 "Not running"
   ;;
 restart|reload)
-  sig HUP && echo reloaded OK && exit 0
+  sig USR2 && echo reloaded OK && exit 0
   echo >&2 "Couldn't reload, starting '$CMD' instead"
   run "$CMD"
   ;;
