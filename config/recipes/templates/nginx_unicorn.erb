@@ -1,11 +1,20 @@
 upstream unicorn {
-  server unix:/tmp/unicorn.<%= application %>.sock fail_timeout=0;
+  server unix:/tmp/unicorn.blog.sock fail_timeout=0;
 }
 
 server {
   listen 80 default deferred;
   server_name bowlingstats.ca;
   root <%= current_path %>/public;
+
+  if (-f $document_root/system/maintenance.html) {
+    return 503;
+  }
+  error_page 503 @maintenance;
+  location @maintenance {
+    rewrite  ^(.*)$  /system/maintenance.html last;
+    break;
+  }
 
   location ^~ /assets/ {
     gzip_static on;
