@@ -1,5 +1,6 @@
-require 'cloudfiles' 
+require 'cloudfiles'
 require 'mime/types'
+require 'constants'
 
 cloudfiles_connection = CloudFiles::Connection.new(
   :username => RACK_USER,
