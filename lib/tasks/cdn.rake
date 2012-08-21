@@ -2,10 +2,10 @@ require 'cloudfiles'
 require 'mime/types'
 
 cloudfiles_connection = CloudFiles::Connection.new(
-  :username => ENV['RACK_USER'],
-  :api_key => ENV['RACK_API']
+  :username => RACK_USER,
+  :api_key => RACK_API
 )
-cloudfiles_container = cloudfiles_connection.container(ENV['RACK_FILES'])
+cloudfiles_container = cloudfiles_connection.container(RACK_FILES)
 
 namespace :cdn do
   namespace :upload do
