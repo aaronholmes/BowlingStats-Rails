@@ -21,7 +21,7 @@ namespace :assets do
 
 	desc "Symlink the constants file into latest release"
 	task :symlink, roles: :app do
-	run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+	run "ln -nfs #{shared_path}/config/constants.rb #{release_path}/config/constants.rb"
 	end
 	after "deploy:finalize_update", "postgresql:symlink"
 end
