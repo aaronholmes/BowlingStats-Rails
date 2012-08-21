@@ -7,10 +7,15 @@ BowlingStatsRails::Application.routes.draw do
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/landing', to: 'static_pages#landing'
+  match '/tour', to: 'static_pages#tour'
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+
+
+  match "/blog" => redirect("http://blog.bowlingstats.ca"), :as => :blog
+  match "/forum" => redirect("http://forum.bowlingstats.ca"), :as => :forum
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,12 +13,12 @@ set eventqueue
 #     using tlsv1
 #     with timeout 30 seconds
 
-set alert ryan@railscasts.com
+set alert ENV["SERVER_ALERT_EMAIL"]
 
 set httpd port 2812
-    allow admin:"secret"
+    allow ENV["MONIT_ADMIN"]:"ENV["MONIT_PASS"]"
 
-check system blog_server
+check system railyard_server
   if loadavg(5min) > 2 for 2 cycles then alert
   if memory > 75% for 2 cycles then alert
   if cpu(user) > 75% for 2 cycles then alert

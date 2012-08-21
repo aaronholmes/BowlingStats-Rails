@@ -11,6 +11,9 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def tour
+  end
+
   def landing
   	render :layout => 'landing_page'
   end
