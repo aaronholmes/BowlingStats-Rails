@@ -13,10 +13,10 @@ set eventqueue
 #     using tlsv1
 #     with timeout 30 seconds
 
-set alert ENV["SERVER_ALERT_EMAIL"]
+set alert <%= ENV["SERVER_ALERT_EMAIL"] %>
 
 set httpd port 2812
-    allow ENV["MONIT_ADMIN"]:"ENV["MONIT_PASS"]"
+    allow <%=ENV["MONIT_ADMIN"]%>:<%=ENV["MONIT_PASS"]%>
 
 check system railyard_server
   if loadavg(5min) > 2 for 2 cycles then alert
