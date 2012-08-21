@@ -7,6 +7,7 @@ gem 'yui-rails'
 gem 'jquery-rails'
 gem 'rake'
 gem 'bcrypt-ruby', '~> 3.0.1'
+gem 'cloudfiles'
 
 group :development, :test do
   gem 'sqlite3'
