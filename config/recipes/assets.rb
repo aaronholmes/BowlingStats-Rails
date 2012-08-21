@@ -23,6 +23,6 @@ namespace :assets do
 	task :symlink, roles: :app do
 	run "ln -nfs #{shared_path}/config/constants.rb #{release_path}/config/constants.rb"
 	end
-	after "deploy:finalize_update", "postgresql:symlink"
+	after "deploy:finalize_update", "assets:symlink"
 end
 
