@@ -10,9 +10,9 @@ namespace :assets do
 
 	desc "Setup constants for CDN"
 	task :setupcdn, :roles => :web do
-		set_default(:RACK_USER) { Capistrano::CLI.password_prompt "Rackspace User: " }
-		set_default(:RACK_API) { Capistrano::CLI.password_prompt "Rackspace API: " }
-		set_default(:RACK_FILES) { Capistrano::CLI.password_prompt "Rackspace CloudFiles Bucket: " }
+		set_default(:rack_user) { Capistrano::CLI.password_prompt "Rackspace User: " }
+		set_default(:rack_api) { Capistrano::CLI.password_prompt "Rackspace API: " }
+		set_default(:rack_files) { Capistrano::CLI.password_prompt "Rackspace CloudFiles Bucket: " }
 
 		run "mkdir -p #{shared_path}/config"
     	template "constants.erb", "#{shared_path}/config/constants.rb"
