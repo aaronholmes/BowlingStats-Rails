@@ -1,4 +1,4 @@
-require 'cloudfiles'
+require 'cloudfiles' 
 require 'mime/types'
 
 cloudfiles_connection = CloudFiles::Connection.new(
