@@ -1,4 +1,5 @@
 require "constants"
+require "asset_sync"
 
 AssetSync.configure do |config|
   config.fog_provider = 'Rackspace'
