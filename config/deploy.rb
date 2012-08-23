@@ -8,7 +8,7 @@ load "config/recipes/nodejs"
 #load "config/recipes/rbenv"
 load "config/recipes/check"
 load "config/recipes/monit"
-#load "config/recipes/assets"
+load "config/recipes/assets"
 
 server "198.101.233.171", :web, :app, :db, primary: true
 
