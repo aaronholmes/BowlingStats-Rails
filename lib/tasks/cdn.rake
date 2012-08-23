@@ -13,7 +13,7 @@ require 'find'
 require 'colored'
 
 desc "refresh precompiled assets in the rackspace CloudFiles CDN"
-task :asset_sync do
+task :ddddasset_sync do
 
   
     cf = CloudFiles::Connection.new(
