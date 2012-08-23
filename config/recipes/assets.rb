@@ -4,6 +4,7 @@ namespace :assets do
 	desc "Compile assets for production"
 	task :compile, :roles => :web do
 		symlink
+		assets:precompile:primary
 		run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake asset_sync --trace"
 	end
 	after 'deploy:update_code', 'assets:compile'
