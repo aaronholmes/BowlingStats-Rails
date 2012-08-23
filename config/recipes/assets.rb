@@ -4,7 +4,7 @@ namespace :assets do
 	desc "Compile assets for production"
 	task :compile, :roles => :web do
 		symlink
-		assets:precompile:primary
+		precompile
 		run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake asset_sync --trace"
 	end
 	after 'deploy:update_code', 'assets:compile'
@@ -18,6 +18,10 @@ namespace :assets do
 		run "mkdir -p #{shared_path}/config"
     	template "constants.erb", "#{shared_path}/config/constants.rb"
 	end
+
+	task :precompile, :role => :app do
+	    run "cd #{release_path}/ && RAILS_ENV=staging bundle exec rake assets:precompile --trace"
+	  end
 
 	desc "Symlink the constants file into latest release"
 	task :symlink, roles: :app do
