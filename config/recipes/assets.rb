@@ -20,7 +20,7 @@ namespace :assets do
 	end
 
 	task :precompile, :role => :app do
-	    run "cd #{release_path}/ && RAILS_ENV=staging bundle exec rake assets:precompile --trace"
+	    run "cd #{release_path}/ && RAILS_ENV=production bundle exec rake assets:precompile:primary --trace"
 	  end
 
 	desc "Symlink the constants file into latest release"
