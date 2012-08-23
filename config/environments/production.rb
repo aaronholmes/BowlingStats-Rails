@@ -43,7 +43,7 @@ BowlingStatsRails::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  #config.action_controller.asset_host = "http://cdn.bowlingstats.ca/"
+  config.action_controller.asset_host = "http://fe1af506b369b2a04b44-6377586d16143b7a6d42c4e6c59afbc8.r96.cf1.rackcdn.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
