@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'rake'
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'cloudfiles'
+gem 'colored'
 
 group :development, :test do
   gem 'sqlite3'

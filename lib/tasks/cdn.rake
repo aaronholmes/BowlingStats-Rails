@@ -2,11 +2,61 @@ require 'cloudfiles'
 require 'mime/types'
 require 'constants'
 
-cloudfiles_connection = CloudFiles::Connection.new(
+
+
+
+# encoding: utf-8
+require 'rubygems'
+require 'cloudfiles'
+require 'mime/types'
+require 'find'
+require 'colored'
+
+desc "refresh precompiled assets in the rackspace CloudFiles CDN"
+task :asset_sync do
+
+  
+    cf = CloudFiles::Connection.new(
   :username => RACK_USER,
   :api_key => RACK_API
 )
-cloudfiles_container = cloudfiles_connection.container(RACK_FILES)
+    asset_container = cf.container(RACK_FILES);
+
+    pub_dir = Rails.root.join("public/")
+
+    # Get File Lists
+    cdn_files = asset_container.objects
+    local_files = Find.find(pub_dir.join('assets')).map { |i| i }
+    local_files[0] = pub_dir.join('assets').to_s
+
+    to_delete = cdn_files.reject { |i| local_files.include?(pub_dir.join(i).to_s)}
+    to_upload = local_files.reject { |i| cdn_files.include?(i[pub_dir.to_s.length..-1]) }
+
+    #delete files that no longer exist
+    to_delete.each do |f|
+        if asset_container.delete_object(f)
+            #puts "    ☓".red + " Deleted   -> " + f
+        end
+    end
+
+    #upload fresh assets
+    to_upload.each do |f|
+        unless FileTest.directory?(f) # ignore directories
+            relative_path = f[pub_dir.to_s.length..-1]
+            #puts "    ↑".green + " Uploading -> " + relative_path
+            file = open(f)
+            types = MIME::Types.type_for(f)
+            object = asset_container.create_object relative_path, true
+            object.write file
+            object.content_type = types[0].to_s
+            file.close
+        end
+    end
+
+    puts "    Deleted " + to_delete.size.to_s + " file(s)"
+    puts "    Uploaded " + to_upload.size.to_s + " file(s)"
+
+end
 
 namespace :cdn do
   namespace :upload do
