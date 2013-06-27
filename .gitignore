@@ -16,4 +16,4 @@ rerun.txt
 pickle-email-*.html
 
 /config/database.yml
-#/lib/constants.rb
+/lib/constants.rb
