@@ -10,10 +10,18 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'cloudfiles'
 gem 'colored'
 
+gem 'activesupport'
+gem 'i18n'
+
+gem 'coveralls', require: false
+
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.10.0'
+  gem 'rspec-rails'
   gem "pry"
+  gem 'unicorn'
+  gem 'bullet'
+  gem 'rack-mini-profiler'
 end
 
 group :test do
